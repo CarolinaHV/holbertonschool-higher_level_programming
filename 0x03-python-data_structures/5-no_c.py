@@ -7,4 +7,4 @@ def no_c(my_string):
         elif char == 'c':
             w_list.remove('c')
     new_list = ''.join(w_list)
-    return(new_list)
+    return new_list
