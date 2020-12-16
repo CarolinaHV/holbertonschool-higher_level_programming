@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    cont = 1
+    cont = 0
     for row in matrix:
         for column in row:
             if cont == len(row) - 1:
