@@ -23,10 +23,12 @@ class Square():
             raise ValueError("size must be >= 0")
 
     """Getter position"""
+    @property
     def position(self):
         return self.__position
 
     """Setter position"""
+    @position.setter
     def position(self, value):
         self.__position = value
         if(type(value)) is not tuple or len(value) != 2 and not int:
