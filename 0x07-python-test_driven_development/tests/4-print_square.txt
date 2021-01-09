@@ -1,0 +1,30 @@
+=========================== PEP8 ===================================
+
+>>> import os
+>>> os.popen('pep8 4-print_square.py').read()
+''
+
+
+========================== SUCCESS CASE TEST ============================
+
+>>> __import__('4-print_square').print_square(2)
+##
+##
+
+
+========================= ERROR CASE TEST ===============================
+
+>>> try: __import__('4-print_square').print_square('KO')
+... except TypeError as e: print(e)
+...
+size must be an integer
+
+>>> try: __import__('4-print_square').print_square(-5)
+... except TypeError as e: print(e)
+...
+size must be >= 0
+
+>>> try: __import__('4-print_square').print_square(-2.8)
+... except ValueError as e: print(e)
+...
+size must be an integer

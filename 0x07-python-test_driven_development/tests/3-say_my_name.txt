@@ -1,0 +1,22 @@
+================================= PEP8 ========================================
+>>> import os
+>>> os.popen('pep8 3-say_my_name.py').read()
+''
+
+
+============================ SUCCESS CASE TEST ================================
+>>> __import__('3-say_my_name').say_my_name('Carolina', 'Hernandez')
+My name is Carolina Hernandez
+
+
+============================= ERROR CASE TEST =================================
+
+>>> try: __import__('3-say_my_name').say_my_name(28, 'Hernandez')
+... except TypeError as e: print(e)
+...
+first_name must be a string
+
+>>> try: __import__('3-say_my_name').say_my_name('Carolina', 36)
+... except TypeError as e: print(e)
+...
+last_name must be a string
