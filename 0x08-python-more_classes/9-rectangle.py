@@ -2,7 +2,7 @@
 """ class Rectangle that defines a rectangle with width and height"""
 
 
-class Rectangle:
+class Rectangle():
     """Define width and height of rectangle"""
 
     number_of_instances = 0
@@ -75,4 +75,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
+        """Return new class Rectangle"""
         return Rectangle(size, size)
