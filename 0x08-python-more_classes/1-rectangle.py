@@ -1,9 +1,13 @@
 #!/usr/bin/python3
-""" class Rectangle that defines a rectangle with width and height"""
+""" 
+class Rectangle
+defines a rectangle with width and height
+
+"""
 
 
 class Rectangle:
-    """Define width and height of rectangle""" 
+    """Define width and height of rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
