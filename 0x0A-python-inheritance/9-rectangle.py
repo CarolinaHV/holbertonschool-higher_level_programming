@@ -29,6 +29,7 @@ inherit from BaseGeometry class
 
 
 class Rectangle(BaseGeometry):
+    """inherits of BaseGeometry"""
     def __init__(self, width, height):
         super().integer_validator("width", width)
         super().integer_validator("height", height)
@@ -36,7 +37,9 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def area(self):
+        """Implementation method calculate area"""
         return self.__width * self.__height
 
     def __str__(self):
+        """rectangle description"""
         return ("[Rectangle] {}/{}".format(self.__width, self.__height))
