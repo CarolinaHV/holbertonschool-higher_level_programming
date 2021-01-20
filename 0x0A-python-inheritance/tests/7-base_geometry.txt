@@ -1,0 +1,35 @@
+=============================== PEP 8 ================================
+
+>>> import os
+>>> os.popen('pep8 7-base_geometry.py').read()
+''
+
+
+
+========================== SUCCESS CASES TEST =========================
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+>>> bg.integer_validator("width", 89)
+
+
+
+========================= ERROR CASE TEST ===============================
+
+>>> bg.integer_validator("distance", "John")
+Traceback (most recent call last):
+TypeError: distance must be an integer
+
+>>> bg.integer_validator("distance", 12.78)
+Traceback (most recent call last):
+TypeError: distance must be an integer
+
+>>> bg.integer_validator("distance", True)
+Traceback (most recent call last):
+TypeError: distance must be an integer
+
+>>> bg.integer_validator("distance", -12)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
