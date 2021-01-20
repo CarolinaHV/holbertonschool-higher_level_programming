@@ -25,10 +25,12 @@ class BaseGeometry:
 """
 Create a Rectangle subclass
 inherit from BaseGeometry class
+
 """
 
 
 class Rectangle(BaseGeometry):
+    """inherits of BaseGeometry"""
     def __init__(self, width, height):
         super().integer_validator("width", width)
         super().integer_validator("height", height)
