@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """
-This is a empty class
+BaseGeometry class
 
 """
 
 
 class BaseGeometry:
+    """Empty class"""
     def __init__(self):
         pass
