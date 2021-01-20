@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """
-This function returns True
-if the object is an instance of a class
-that inherited (directly or indirectly)
-from the specified class, otherwise
+This function returns True if the object is an instance of a class
+that inherited (directly or indirectly) from the specified class, otherwise
 return False.
 
 """
@@ -12,6 +10,4 @@ return False.
 def inherits_from(obj, a_class):
     """evaluate object inheritance vs class"""
     if type(obj) is not a_class:
-        return isinstance(obj, a_class)
-    else:
-        return False
+        return issubclass(type(obj), a_class)
