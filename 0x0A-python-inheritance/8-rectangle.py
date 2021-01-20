@@ -16,10 +16,10 @@ class BaseGeometry:
         """Validation value"""
         if type(value) is not int:
             """Raise exception message"""
-            raise TypeError("{:s} name must be an integer".format(name))
+            raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
             """Raise exception message"""
-            raise ValueError('{:s} name must be greater than 0'.format(name))
+            raise ValueError('{:s} must be greater than 0'.format(name))
 
 
 """
