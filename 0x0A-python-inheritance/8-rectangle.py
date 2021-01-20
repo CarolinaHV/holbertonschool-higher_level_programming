@@ -30,8 +30,9 @@ inherit from BaseGeometry class
 
 
 class Rectangle(BaseGeometry):
-    """inherits of BaseGeometry"""
+    """Instantiation of BaseGeometry"""
     def __init__(self, width, height):
+        """inherits of BaseGeometry"""
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__width = width
