@@ -10,6 +10,7 @@ return False.
 
 
 def inherits_from(obj, a_class):
+    """evaluate object inheritance vs class"""
     if type(obj) is not a_class:
         return isinstance(obj, a_class)
     else:
