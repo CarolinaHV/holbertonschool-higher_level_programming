@@ -9,4 +9,5 @@ the specified class, otherwise return False.
 
 
 def is_kind_of_class(obj, a_class):
+    """Return object and class"""
     return isinstance(obj, a_class)
