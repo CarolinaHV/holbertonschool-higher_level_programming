@@ -7,5 +7,5 @@ and prints it to stdout
 
 
 def read_file(filename=""):
-    with open(filename) as file:
-        print(file.read(), end='')
+    with open(filename) as holb_file:
+        print(holb_file.read(), end='')
