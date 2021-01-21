@@ -7,5 +7,6 @@ and returns the number of characters added:
 
 
 def append_write(filename="", text=""):
+    """append file"""
     with open(filename, 'a') as holb_text:
         return holb_text.write(text)
