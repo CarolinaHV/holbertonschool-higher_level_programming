@@ -21,10 +21,12 @@ class Square(Rectangle):
         self.height = size
 
     def __str__(self):
-        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x, self.y, 
+        """ str method """
+        return '[Square] ({}) {}/{} - {}'.format(self.id, self.x, self.y,
                                                  self.size)
 
     def update(self, *args, **kwargs):
+        """ Square update """
         if args is not None:
             ar = 1
             for arg in args:
@@ -37,15 +39,10 @@ class Square(Rectangle):
                 elif ar == 4:
                     self.y = arg
                 ar += 1
-
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def to_dictionary(self):
-        dic_s = {}
-        dic_s = dict(id = self.id)
-        dic_s = dict(size = self.size)
-        dic_s = dict(x = self.x)
-        dic_s = dict(y = self.y)
-        return dic_s
-
+        """ Square instance to dictionary """
+        list_attr = ['id', 'width', 'height', 'x', 'y']
+        return {key: getattr(self, key) for key in list_attr}

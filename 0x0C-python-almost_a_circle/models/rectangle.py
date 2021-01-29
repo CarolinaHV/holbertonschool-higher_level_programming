@@ -12,7 +12,6 @@ class Rectangle(Base):
         self.height = height
         self.x = x
         self.y = y
-        #super().__init__(id)
 
     """ Getters """
     @property
@@ -64,23 +63,23 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-    
     def area(self):
+        """Area rectangle """
         return (self.width * self.height)
 
-
     def display(self):
-        print ((self.__y * '\n'), end='')
-        print ((self.__x * ' ' + '#' * self.__width + '\n') * (self.__height),
-               end='')
-
+        """ Display character """
+        print((self.__y * '\n'), end='')
+        print((self.__x * ' ' + '#' * self.__width + '\n') * (self.__height),
+              end='')
 
     def __str__(self):
+        """ str method """
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.x, self.y, self.width, self.height)
 
-
     def update(self, *args, **kwargs):
+        """ assigns a key/value argument to attributes """
         if args is not 0:
             ar = 1
             for arg in args:
@@ -95,15 +94,10 @@ class Rectangle(Base):
                 elif ar == 5:
                     self.__y = arg
                 ar += 1
-        
         for key, value in kwargs.items():
             setattr(self, key, value)
 
     def to_dictionary(self):
-        dic = {}
-        dic = dict(id = self.id)
-        dic = dict(width = self.width)
-        dic = dict(height = self.height)
-        dic = dict(x = self.x)
-        dic = dict(y = self.y)
-        return dic
+        """ Rectangle instance to dictionary """
+        list_attr = ['id', 'width', 'height', 'x', 'y']
+        return {key: getattr(self, key) for key in list_attr}
