@@ -32,9 +32,9 @@ class Base:
     def create(cls, **dictionary):
         """ Dictionary to Instance """
         if cls.__name__ == "Rectangle":
-            dummy = Rectangle(1, 1, 3, 5)
+            dummy = Rectangle(3, 5)
         elif cls.__name__ == "Square":
-            dummy = Square(1, 3, 5)
+            dummy = Square(8)
         dummy.update(**dictionary)
         return dummy
 
@@ -50,6 +50,6 @@ class Base:
     def from_json_string(json_string):
         """ JSON string to dictionary """
         if json_string is None or json_string is []:
-            return "[]"
+            return []
         else:
             return json.loads(json_string)
