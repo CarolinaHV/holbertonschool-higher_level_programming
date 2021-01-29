@@ -22,8 +22,8 @@ class Base:
         else:
             new_ld = []
             for obj in list_objs:
-                obj_dict = obj.to_dictionary()
-                new_ld.append(obj_dict)
+                obj = obj.to_dictionary()
+                new_ld.append(obj)
             empty = (cls.to_json_string(new_ld))
         with open('{}.json'.format(cls.__name__), 'w') as file_J:
             file_J.write(empty)
