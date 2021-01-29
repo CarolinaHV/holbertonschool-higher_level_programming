@@ -44,5 +44,5 @@ class Square(Rectangle):
 
     def to_dictionary(self):
         """ Square instance to dictionary """
-        list_attr = ['id', 'width', 'height', 'x', 'y']
+        list_attr = ['id', 'x', 'size', 'y']
         return {key: getattr(self, key) for key in list_attr}
