@@ -32,9 +32,9 @@ class Base:
     def create(cls, **dictionary):
         """ Dictionary to Instance """
         if cls.__name__ == "Rectangle":
-            dummy = Rectangle(3, 5)
+            dummy = Rectangle(1, 1, 3, 5)
         elif cls.__name__ == "Square":
-            dummy = Square(8)
+            dummy = Square(2, 4, 8)
         dummy.update(**dictionary)
         return dummy
 
@@ -53,3 +53,18 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        from_filename = "{}.json".format(cls.__name__)
+        ins_list = []
+        try:
+            with open(from_filename, mode="r+", encoding="UTF-8") as f:
+                cont_json = f.read()
+            list_of_dicts = cls.from_json_string(cont_json)
+            for obj in list_of_dicts:
+                ins_list.append(cls.create(**obj))
+            return ins_list
+        except FileNotFoundError:
+            pass
