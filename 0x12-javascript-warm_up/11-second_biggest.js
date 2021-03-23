@@ -11,5 +11,6 @@ if (num.length < 2) {
   console.log(0);
 } else {
   num.sort();
-  console.log(num[num.length - 2]);
+  const compare = Math.max(num[num.length - 2]);
+  console.log(compare);
 }
