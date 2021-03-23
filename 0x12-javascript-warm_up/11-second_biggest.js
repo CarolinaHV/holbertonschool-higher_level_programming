@@ -10,7 +10,7 @@ const num = (process.argv.slice(2));
 if (num.length < 2) {
   console.log(0);
 } else {
-  num.sort();
-  const compare = Math.max(num[num.length - 2]);
+    num.sort((a, b) => a - b);
+    const compare = Math.max(num[num.length - 2]);
   console.log(compare);
 }
