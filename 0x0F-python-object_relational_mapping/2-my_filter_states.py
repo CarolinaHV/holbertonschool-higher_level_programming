@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 '''
-This script that lists all states with a name starting
-with N (upper N) from the database h.
+This Write a script that takes in an argument and displays all values
+in the states table of hbtn_0e_0_usa where name matches the argument.
 
 '''
 
@@ -15,15 +15,14 @@ if __name__ == "__main__":
                            port=3306,
                            user=argv[1],
                            passwd=argv[2],
-                           db=argv[3],
-                           charset="utf-8")
+                           db=argv[3])
 
     ''' Create a cursor '''
     cur = conn.cursor()
 
     ''' Query the database - list all the rows '''
-    cur.execute("""SELECT * FROM states 
-    WHERE name LIKE 'N%' 
+    cur.execute("""SELECT * FROM states
+    WHERE name LIKE '{}'
     ORDER BY id ASC""".format(argv[4]))
     
     query_rows = cur.fetchall()
