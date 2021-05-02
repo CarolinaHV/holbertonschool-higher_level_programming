@@ -18,11 +18,11 @@ if __name__ == "__main__":
 
     ''' Create a cursor '''
     cur = conn.cursor()
-    
+
     ''' Query the database - list all the rows '''
     cur.execute("""SELECT * FROM `states`
     WHERE `name`=(%s) ORDER BY `id` ASC""", (argv[4],))
-   
+
     rows = cur.fetchall()
     for row in rows:
         print(row)
