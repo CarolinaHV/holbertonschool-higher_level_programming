@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-This script prints the first State object from the database hbtn_0e_6_usa
+This script adds the State object “Louisiana” to
+the database hbtn_0e_6_usa
 
 '''
 
@@ -19,10 +20,11 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    new_obj = State(name='Louisiana')
+    session.add(new_obj)
+    session.commit()
+    state = session.query(State).filter(State.name == 'Louisiana').first()
 
-    if state:
-        print("{}: {}".format(state.id, state.name))
-    else:
-        print("Nothing")
+    print(state.id)
+
     session.close()

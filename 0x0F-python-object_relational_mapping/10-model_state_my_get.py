@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-This script prints the first State object from the database hbtn_0e_6_usa
+This script prints the State object with the name
+passed as argument from the database hbtn_0e_6_usa
 
 '''
 
@@ -19,10 +20,12 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    for state in session.query(State).order_by(State.id).all():
+        if argv[4] == state.name:
+            print(state.id)
+            session.close()
+            sys.exit()
 
-    if state:
-        print("{}: {}".format(state.id, state.name))
-    else:
-        print("Nothing")
+    print("Not found")
+
     session.close()

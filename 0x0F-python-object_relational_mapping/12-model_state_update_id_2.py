@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
-This script prints the first State object from the database hbtn_0e_6_usa
+This script changes the name of a State object
+from the database hbtn_0e_6_usa
 
 '''
 
@@ -19,10 +20,9 @@ if __name__ == "__main__":
 
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
+    for state in session.query(State).all():
+        if 'N' in state.name:
+            session.delete(state)
+            session.commit()
 
-    if state:
-        print("{}: {}".format(state.id, state.name))
-    else:
-        print("Nothing")
     session.close()
