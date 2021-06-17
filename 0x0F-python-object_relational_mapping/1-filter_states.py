@@ -23,7 +23,7 @@ if __name__ == "__main__":
 
     ''' Query the database - list all the rows '''
     cur.execute("""SELECT * FROM states WHERE name LIKE BYNARY 'N%'
-    ORDER BY 'states.id' ASC""")
+    ORDER BY id ASC""")
 
     query_rows = cur.fetchall()
     if query_rows:
