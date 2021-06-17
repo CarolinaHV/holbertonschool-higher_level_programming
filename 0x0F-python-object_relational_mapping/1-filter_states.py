@@ -22,10 +22,13 @@ if __name__ == "__main__":
     cur = conn.cursor()
 
     ''' Query the database - list all the rows '''
-    cur.execute("SELECT * FROM states WHERE name LIKE BYNARY 'N%' ORDER BY states.id ASC")
+    cur.execute("""SELECT * FROM states WHERE name LIKE BYNARY 'N%'
+    ORDER BY 'states.id' ASC""")
+
     query_rows = cur.fetchall()
-    for row in query_rows:
-        print(row)
+    if query_rows:
+        for row in query_rows:
+            print(row)
 
     cur.close()
     conn.close()
